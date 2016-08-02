@@ -40,8 +40,8 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "coveralls": "^2.11.12",
     "lab": "10.x.x",
-    "nodemon": "1.x.x",
     "sinon": "^1.17.5"
   }
 }
