@@ -6,6 +6,7 @@ Scraper API
 [![devDependency Status](https://david-dm.org/paolo-chiabrera/scraper-api/dev-status.svg?theme=shields.io)](https://david-dm.org/paolo-chiabrera/scraper-api#info=devDependencies)
 [![Build Status](https://travis-ci.org/paolo-chiabrera/scraper-api.svg?branch=master)](https://travis-ci.org/paolo-chiabrera/scraper-api)
 [![Coverage Status](https://coveralls.io/repos/github/paolo-chiabrera/tfl-api/badge.svg?branch=master)](https://coveralls.io/github/paolo-chiabrera/tfl-api?branch=master)
+[![Docker Repository on Quay](https://quay.io/repository/d3lirium/scraper-api/status "Docker Repository on Quay")](https://quay.io/repository/d3lirium/scraper-api)
 
 `scraper-api` is a Node.js based API exposing a customization of the x-ray scraping library
 
