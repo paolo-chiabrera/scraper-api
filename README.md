@@ -7,12 +7,26 @@ Scraper API
 [![Build Status](https://travis-ci.org/paolo-chiabrera/scraper-api.svg?branch=master)](https://travis-ci.org/paolo-chiabrera/scraper-api)
 [![Coverage Status](https://coveralls.io/repos/github/paolo-chiabrera/tfl-api/badge.svg?branch=master)](https://coveralls.io/github/paolo-chiabrera/tfl-api?branch=master)
 
+`scraper-api` is a Node.js based API exposing a customization of the x-ray scraping library
+
+Maintained by [Paolo Chiabrera](https://github.com/paolo-chiabrera).
+
 ## Usage
 
-```bash
-$ echo "details coming soon"
+```
+npm start
 ```
 
+## Endpoints
+
+### /documentation
+Swagger 2.0 documentation
+
+## Testing
+
+```
+npm test
+```
 
 ## License
 

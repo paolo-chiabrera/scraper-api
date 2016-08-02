@@ -32,6 +32,10 @@ exports.register = function (server, options, next) {
           pageSelector: Joi.string().required().description('CSS selector for the page - .page a@href'),
           imageSelector: Joi.string().required().description('CSS selector for the image - .image img@src')
         })
+      },
+      cache: {
+        expiresIn: 30 * 1000,
+        privacy: 'private'
       }
     }
   });
