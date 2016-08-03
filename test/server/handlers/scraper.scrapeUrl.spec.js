@@ -69,24 +69,24 @@ lab.experiment('scraper', () => {
       done();
     });
 
-    lab.test('it should return an error: selectors.pageSelector is not a valid String', (done) => {
+    lab.test('it should return an error: selectors.page is not a valid String', (done) => {
       const scrapeUrl = sinon.spy(scraper, 'scrapeUrl');
       const cb = sinon.spy();
 
       scrapeUrl({
         url: 'test',
         selectors: {
-          pageSelector: null
+          page: null
         }
       }, cb);
 
-      sinon.assert.calledWith(cb, 'selectors.pageSelector is not a valid String');
+      sinon.assert.calledWith(cb, 'selectors.page is not a valid String');
 
       scrapeUrl.restore();
       done();
     });
 
-    lab.test('it should return an error: selectors.pageSelector is not a valid String', (done) => {
+    lab.test('it should return an error raised by x-ray', (done) => {
       const scrapeUrl = sinon.spy(scraper, 'scrapeUrl');
       const cb = sinon.spy();
 
@@ -102,7 +102,7 @@ lab.experiment('scraper', () => {
       scrapeUrl({
         url: 'test',
         selectors: {
-          pageSelector: 'test'
+          page: 'test'
         }
       }, cb);
 
@@ -126,7 +126,7 @@ lab.experiment('scraper', () => {
       scrapeUrl({
         url: 'test',
         selectors: {
-          pageSelector: 'test'
+          page: 'test'
         }
       }, cb);
 

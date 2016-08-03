@@ -64,18 +64,18 @@ lab.experiment('scraper', () => {
       done();
     });
 
-    lab.test('it should return an error: selectors.imageSelector is not a valid String', (done) => {
+    lab.test('it should return an error: selectors.image is not a valid String', (done) => {
       const mapLinks = sinon.spy(scraper, 'mapLinks');
       const cb = sinon.spy();
 
       mapLinks({
         links: ['test'],
         selectors: {
-          imageSelector: null
+          image: null
         }
       }, cb);
 
-      sinon.assert.calledWith(cb, 'selectors.imageSelector is not a valid String');
+      sinon.assert.calledWith(cb, 'selectors.image is not a valid String');
 
       mapLinks.restore();
       done();
@@ -94,7 +94,7 @@ lab.experiment('scraper', () => {
       mapLinks({
         links: ['test'],
         selectors: {
-          imageSelector: 'test'
+          image: 'test'
         }
       }, cb);
 
@@ -112,7 +112,7 @@ lab.experiment('scraper', () => {
       mapLinks({
         links: ['test'],
         selectors: {
-          imageSelector: 'test'
+          image: 'test'
         }
       }, cb);
 

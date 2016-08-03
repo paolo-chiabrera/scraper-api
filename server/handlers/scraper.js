@@ -32,13 +32,13 @@ expose.mapLinks = function mapLinks(args, done) {
     return;
   }
 
-  if (!_.isString(selectors.imageSelector) || _.isEmpty(selectors.imageSelector)) {
-    done('selectors.imageSelector is not a valid String');
+  if (!_.isString(selectors.image) || _.isEmpty(selectors.image)) {
+    done('selectors.image is not a valid String');
     return;
   }
 
   async.mapLimit(links, concurrency, (link, next) => {
-    expose.xray(link, 'body', selectors.imageSelector)(next);
+    expose.xray(link, 'body', selectors.image)(next);
   }, (err, results) => {
     if(err){
       done(err);
@@ -70,8 +70,8 @@ expose.scrapeUrl = function scrapeUrl(args, done) {
     return;
   }
 
-  if (!_.isString(selectors.pageSelector) || _.isEmpty(selectors.pageSelector)) {
-    done('selectors.pageSelector is not a valid String');
+  if (!_.isString(selectors.page) || _.isEmpty(selectors.page)) {
+    done('selectors.page is not a valid String');
     return;
   }
 
@@ -89,17 +89,11 @@ expose.scrapeUrl = function scrapeUrl(args, done) {
     }, done);
   }
 
-  expose.xray(url, 'body', [selectors.pageSelector])(handleResults);
+  expose.xray(url, 'body', [selectors.page])(handleResults);
 }
 
 expose.postScrapeUrl = function postScrapeUrl(request, reply) {
-  expose.scrapeUrl({
-    url: request.payload.url,
-    selectors: {
-      pageSelector: request.payload.pageSelector,
-      imageSelector: request.payload.imageSelector
-    }
-  }, (err, results) => {
+  expose.scrapeUrl(request.payload, (err, results) => {
     if(err){
       reply(Boom.badImplementation(err));
       return;

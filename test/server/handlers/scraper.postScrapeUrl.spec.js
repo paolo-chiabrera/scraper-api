@@ -34,8 +34,10 @@ lab.experiment('scraper', () => {
       const request = {
         payload: {
           url: 'test',
-          pageSelector: 'test',
-          imageSelector: 'test'
+          selectors: {
+            page: 'test',
+            image: 'test'
+          }
         }
       };
 
@@ -61,8 +63,10 @@ lab.experiment('scraper', () => {
       const request = {
         payload: {
           url: 'test',
-          pageSelector: 'test',
-          imageSelector: 'test'
+          selectors: {
+            page: 'test',
+            image: 'test'
+          }
         }
       };
 
