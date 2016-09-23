@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "lab -c -L",
+    "test": "lab -v -c -L",
     "test-coveralls": "lab -c -L -r console -o stdout -r lcov -o test/artifacts/lcov.info"
   },
   "repository": {

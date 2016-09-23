@@ -21,4 +21,4 @@ WORKDIR /home/app
 
 ADD . /home/app
 
-CMD pm2 start /home/app/server.js -x -i 1 --name app && pm2 save && pm2 logs
+CMD pm2 start /home/app/server.js -i max --name app && pm2 save && pm2 logs
