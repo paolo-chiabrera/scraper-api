@@ -15,10 +15,10 @@ RUN cd /tmp && npm install --save pm2@latest -g && npm install --production
 
 RUN mkdir -p /home/app && cp -a /tmp/node_modules /home/app
 
-RUN pm2 startup ubuntu
+# RUN pm2 startup ubuntu
 
 WORKDIR /home/app
 
 ADD . /home/app
 
-CMD pm2 start /home/app/server.js -i max --name app && pm2 save && pm2 logs
+CMD pm2 start /home/app/server.js --name app && pm2 save && pm2 logs
